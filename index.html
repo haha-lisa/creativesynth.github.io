@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CreativeSynth: Creative Blending and Synthesis of Visual Arts based on Multimodal Diffusion.">
+        content="CreativeSynth: Cross-Art-Attention for Artistic Image Synthesis with Multimodal Diffusion">
   <meta name="keywords" content="CreativeSynth">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CreativeSynth: Creative Blending and Synthesis of Visual Arts based on Multimodal Diffusion</title>
+  <title>CreativeSynth: Cross-Art-Attention for Artistic Image Synthesis with Multimodal Diffusion</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -83,7 +83,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">MotionCrafter: One-Shot Motion Customization of Diffusion Models</h1>
+          <h1 class="title is-1 publication-title">CreativeSynth: Cross-Art-Attention for Artistic Image Synthesis with Multimodal Diffusion</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://haha-lisa.github.io/">Nisha Huang</a><sup>1,2</sup>,</span>
@@ -133,7 +133,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
+              <!-- Video Link.
               <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=Y0-zeGfhDYM"
                    class="external-link button is-normal is-rounded is-dark">
@@ -141,11 +141,11 @@
                       <i class="fab fa-youtube"></i>
                   </span>
                   <span>Video</span>
-                </a>
+                </a> -->
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/zyxElsa/MotionCrafter"
+                <a href="https://github.com/haha-lisa/CreativeSynth"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -170,7 +170,7 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">MotionCrafter</span> can generate new videos with same the motion as the given reference.
+        <span class="dnerf">CreativeSynth</span> !!! can generate new videos with same the motion as the given reference.
       </h2>
     </div>
   </div>
@@ -243,13 +243,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The essence of a video lies in its dynamic motions, including character actions, object movements, and camera movements. 
-            While text-to-video generative diffusion models have recently advanced in creating diverse contents, controlling specific motions through text prompts remains a significant challenge. A primary issue is the coupling of appearance and motion, often leading to overfitting on appearance. 
-            To tackle this challenge, we introduce MotionCrafter, a novel one-shot instance-guided motion customization method. 
-            MotionCrafter employs a parallel spatial-temporal architecture that injects the reference motion into the temporal component of the base model, while the spatial module is independently adjusted for character or style control. 
-            To enhance the disentanglement of motion and appearance, we propose an innovative dual-branch motion disentanglement approach, comprising a motion disentanglement loss and an appearance prior enhancement strategy. 
-            During training, a frozen base model provides appearance normalization, effectively separating appearance from motion and thereby preserving diversity. 
-            Comprehensive quantitative and qualitative experiments, along with user preference tests, demonstrate that MotionCrafter can successfully integrate dynamic motions while preserving the coherence and quality of the base model with a wide range of appearance generation capabilities.
+           Although remarkable progress has been made in image style transfer, style is just one of the components of artistic paintings. 
+           Directly transferring extracted style features to natural images often results in outputs with obvious synthetic traces. 
+           This is because key painting attributes including layout, perspective, shape, and semantics often cannot be conveyed and expressed through style transfer. 
+           Large-scale pretrained text-to-image generation models have demonstrated their capability to synthesize a vast amount of high-quality images. 
+           However, even with extensive textual descriptions, it is challenging to fully express the unique visual properties and details of paintings. 
+           Moreover, generic models often disrupt the overall artistic effect when modifying specific areas, making it more complicated to achieve a unified aesthetic in artworks. 
+           Our main novel idea is to integrate multimodal semantic information as a synthesis guide into artworks, rather than transferring style to the real world. 
+           We also aim to reduce the disruption to the harmony of artworks while simplifying the guidance conditions. 
+           Specifically, we propose an innovative multi-task unified framework called CreativeSynth, based on the diffusion model with the ability to coordinate multimodal inputs. 
+           CreativeSynth combines multimodal features with customized attention mechanisms to seamlessly integrate real-world semantic content into the art domain through Cross-Art-Attention for aesthetic maintenance and semantic fusion. 
+           We demonstrate the results of our method across a wide range of different art categories, proving that CreativeSynth bridges the gap between generative models and artistic expression.
           </p>
         </div>
       </div>
@@ -259,15 +263,16 @@
     <!-- Method -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">MotionCrafter</h2>
+        <h2 class="title is-3">CreativeSynth</h2>
         <div class="content has-text-justified">
           <p>                        
-            To decompose the appearance and motion of the generated videos, we propose a parallel spatial-temporal architecture.
-            It leverages two separate paths to learn the appearance and motion information from videos, corresponding to the spatial and temporal modules in the backbone of a text-to-video generation model.
-            To achieve better disentanglement, we further design a dual-branch motion disentanglement based on an information bottleneck.
-            We incorporate a frozen branch of the base model to serve as an appearance prior.
-            During training, the framework takes a reference video and enhanced textual conditioning as inputs and fine-tunes the trainable branch.
-            During inference, our framework takes user-provided textual conditioning as input and generates results that incorporate the reference video information using only the fine-tuned branch.   
+            CreativeSynth incorporates information from text and image modalities to sample artwork based on guiding conditions. 
+            This approach begins with encodings of semantic prompts from images and textual prompts to lay the groundwork for condition guidance. 
+            Our framework then focuses on aesthetic maintenance by a dedicated processor that adjusts the semantic image style to be consistent with the target image through adaptive instance normalization. 
+            In the semantic fusion section, CreativeSynth employs a decoupled cross-attention mechanism that meticulously coordinates the interplay between visual and textual features, resulting in a cohesive synthesis rather than a sum of its parts. 
+            Finally, the sampling process is based on the principle of image inversion, which utilizes denoising techniques to reverse sample the image from the initial noise. 
+            Ultimately, CreativeSynth generates customized artworks that resonate with the given semantic prompts and chosen aesthetic style. 
+            The overall architecture of the method is shown in the following figure.  
     
           </p>
         </div>
@@ -276,12 +281,40 @@
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">The overall pipeline of MotionCrafter</span>.
+            <span class="dnerf">The overall pipeline of CreativeSynth</span>.
           </h2>
         </div>
       </div>
     </div>
     <!--/ Method -->
+
+     <!-- Results -->
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">CreativeSynth</h2>
+        <div class="content has-text-justified">
+          <p>                        
+            CreativeSynth incorporates information from text and image modalities to sample artwork based on guiding conditions. 
+            This approach begins with encodings of semantic prompts from images and textual prompts to lay the groundwork for condition guidance. 
+            Our framework then focuses on aesthetic maintenance by a dedicated processor that adjusts the semantic image style to be consistent with the target image through adaptive instance normalization. 
+            In the semantic fusion section, CreativeSynth employs a decoupled cross-attention mechanism that meticulously coordinates the interplay between visual and textual features, resulting in a cohesive synthesis rather than a sum of its parts. 
+            Finally, the sampling process is based on the principle of image inversion, which utilizes denoising techniques to reverse sample the image from the initial noise. 
+            Ultimately, CreativeSynth generates customized artworks that resonate with the given semantic prompts and chosen aesthetic style. 
+            The overall architecture of the method is shown in the following figure.  
+    
+          </p>
+        </div>
+         <div class="publication-banner">           
+            <img src="./static/images/pipeline2_00.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf">The overall pipeline of CreativeSynth</span>.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!--/ Results -->
 
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
@@ -301,11 +334,13 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{zhang2023motioncrafter,
-  title={MotionCrafter: One-Shot Motion Customization of Diffusion Models},
-  author={Zhang, Yuxin and Tang, Fan and Huang, Nisha and Huang, Haibin and Ma, Chongyang and Dong, Weiming and Xu, Changsheng},
-  journal={arXiv preprint arXiv:2312.05288},
-  year={2023}
+    <pre><code>@article{huang2024creativesynth,
+      title={CreativeSynth: Creative Blending and Synthesis of Visual Arts based on Multimodal Diffusion},
+      author={Huang, Nisha and Dong, Weiming and Zhang, Yuxin and Tang, Fan and Li, Ronghui and Ma, Chongyang and Li, Xiu and
+     Lee, Tong-Yee and Xu, Changsheng},
+      journal={arXiv preprint arXiv:2401.14066},
+      year={2024}
+    }
 }</code></pre>
   </div>
 </section>
@@ -315,10 +350,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="https://arxiv.org/pdf/2312.05288.pdf">
+         href="https://arxiv.org/pdf/2401.14066">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/zyxElsa" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/haha-lisa" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
