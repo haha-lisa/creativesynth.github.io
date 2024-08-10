@@ -369,22 +369,17 @@
         <h2 class="title is-3">CreativeSynth</h2>
         <div class="content has-text-justified">
           <p>                        
-            CreativeSynth incorporates information from text and image modalities to sample artwork based on guiding conditions. 
-            This approach begins with encodings of semantic prompts from images and textual prompts to lay the groundwork for condition guidance. 
-            Our framework then focuses on aesthetic maintenance by a dedicated processor that adjusts the semantic image style to be consistent with the target image through adaptive instance normalization. 
-            In the semantic fusion section, CreativeSynth employs a decoupled cross-attention mechanism that meticulously coordinates the interplay between visual and textual features, resulting in a cohesive synthesis rather than a sum of its parts. 
-            Finally, the sampling process is based on the principle of image inversion, which utilizes denoising techniques to reverse sample the image from the initial noise. 
-            Ultimately, CreativeSynth generates customized artworks that resonate with the given semantic prompts and chosen aesthetic style. 
-            The overall architecture of the method is shown in the following figure.  
+            Different modalities naturally emerge in response to the same data source, and CreativeSynth connects all of these
+            modalities into a common embedding space, enabling new emergent alignments and functionality.
     
           </p>
         </div>
          <div class="publication-banner">           
-            <img src="./static/images/pipeline.png"
+            <img src="./static/images/overview.png"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">The overall pipeline of CreativeSynth</span>.
+            <span class="dnerf">CreativeSynth overview.</span>.
           </h2>
         </div>
       </div>
