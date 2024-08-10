@@ -204,59 +204,61 @@
 <!--   
 
 =================Teasers==========================-->
-<section class="hero is-small">
-  <div class="hero-body" style="background: #e8e8e8;width: 100%">
-    <div class="mainshowcase">
-      <!-- The expanding image container -->
-      <!-- <h2 class="title is-3">Text to Image</h2> -->
-      <div class="tab_container">
-        <!-- Close the image -->
-        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+<div class="content">
+  <h2>Results</h2> 
+  <p>Generated results for VITON-HD, DressCode, SHHQ-1.0, and web-crawled images. All generated outputs were produced using StableVITON, which was trained on the VITON-HD training dataset.</p>
 
-        <!-- Expanded image -->
-        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true" class="juxtapose"
-          style="height: 650px; width: 400px;">
-          
-        </div>
+  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel2" data-slide-to="1"></li>
+      <li data-target="#myCarousel2" data-slide-to="2"></li>
+      <li data-target="#myCarousel2" data-slide-to="3"></li>
+    </ol>
 
-        <div>
-          <div id="juxtapose-hidden"></div>
-        </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+          <div class="carousel-caption-top">
+            <h1>VITON-HD</h1>
+          </div>
+          <img src="./static/images/sup7.png" alt="VITON-HD" style="width:100%;">
+      </div>
+      
 
-        <!-- Image text -->
-        <div id="imgtext"></div>
+      <div class="item">
+          <div class="carousel-caption-top">
+              <h1>DressCode</h1>
+          </div>
+          <img src="./static/images/sup8.png" alt="DressCode" style="width:100%;">
       </div>
 
-      <!-- The grid: four columns -->
-      <div class="tab_row">
-        <div class="tab_column">
-          <img src="static/images/sup7.png" onclick="tab_gallery_click('sup7');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup8.png" onclick="tab_gallery_click('sup8');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup9.png" onclick="tab_gallery_click('sup9');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup10.png" onclick="tab_gallery_click('sup10');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup11.png" onclick="tab_gallery_click('sup11');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup12.png" onclick="tab_gallery_click('sup12');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup13.png" onclick="tab_gallery_click('sup13');">
-        </div>
-        <div class="tab_column">
-          <img src="static/images/sup14.png" onclick="tab_gallery_click('sup14');">
-        </div>
-
+      <div class="item">
+          <div class="carousel-caption-top">
+            <h1>SHHQ-1.0</h1>
+          </div>
+          <img src="./static/images/sup9.png" alt="SHHQ" style="width:100%;">
+      </div>
+    
+      <div class="item">
+          <div class="carousel-caption-top">
+              <h1>Web-crawled</h1>    
+          </div>
+          <img src="./static/images/sup10.png" alt="Web-crawled" style="width:100%;">
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
